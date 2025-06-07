@@ -1,0 +1,86 @@
+name: mini_mart
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  equatable: ^2.0.7
+  go_router: ^15.1.2
+  flutter_riverpod: ^2.6.1
+  shared_preferences: ^2.5.3
+  intl: ^0.20.2
+  overlay_support: ^2.1.0
+  flutter_svg: ^2.1.0
+  flutter_screenutil: ^5.9.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/svg/
+    - assets/jpg/
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: IBMPlexSans
+      fonts:
+        - asset: assets/fonts/IBMPlexSans-Bold.ttf
+        - asset: assets/fonts/IBMPlexSans-BoldItalic.ttf
+        - asset: assets/fonts/IBMPlexSans-ExtraLight.ttf
+        - asset: assets/fonts/IBMPlexSans-ExtraLightItalic.ttf
+        - asset: assets/fonts/IBMPlexSans-Italic.ttf
+        - asset: assets/fonts/IBMPlexSans-Light.ttf
+        - asset: assets/fonts/IBMPlexSans-LightItalic.ttf
+        - asset: assets/fonts/IBMPlexSans-Medium.ttf
+        - asset: assets/fonts/IBMPlexSans-MediumItalic.ttf
+        - asset: assets/fonts/IBMPlexSans-Regular.ttf
+        - asset: assets/fonts/IBMPlexSans-SemiBold.ttf
+        - asset: assets/fonts/IBMPlexSans-SemiBoldItalic.ttf
+        - asset: assets/fonts/IBMPlexSans-Thin.ttf
+        - asset: assets/fonts/IBMPlexSans-ThinItalic.ttf
+        - asset: assets/fonts/IBMPlexSans_Condensed-Bold.ttf
+        - asset: assets/fonts/IBMPlexSans_Condensed-BoldItalic.ttf
+        - asset: assets/fonts/IBMPlexSans_Condensed-ExtraLight.ttf
+        - asset: assets/fonts/IBMPlexSans_Condensed-ExtraLightItalic.ttf
+        - asset: assets/fonts/IBMPlexSans_Condensed-Italic.ttf
+        - asset: assets/fonts/IBMPlexSans_Condensed-Light.ttf
+        - asset: assets/fonts/IBMPlexSans_Condensed-LightItalic.ttf
+        - asset: assets/fonts/IBMPlexSans_Condensed-MediumItalic.ttf
+        - asset: assets/fonts/IBMPlexSans_Condensed-Regular.ttf
+        - asset: assets/fonts/IBMPlexSans_Condensed-SemiBold.ttf
+        - asset: assets/fonts/IBMPlexSans_Condensed-SemiBoldItalic.ttf
+        - asset: assets/fonts/IBMPlexSans_Condensed-Thin.ttf
+        - asset: assets/fonts/IBMPlexSans_Condensed-ThinItalic.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-Bold.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-BoldItalic.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-ExtraLightItalic.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-ExtraLight.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-Italic.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-Light.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-LightItalic.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-Medium.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-MediumItalic.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-Regular.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-SemiBold.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-SemiBoldItalic.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-Thin.ttf
+        - asset: assets/fonts/IBMPlexSans_SemiCondensed-ThinItalic.ttf    
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package
