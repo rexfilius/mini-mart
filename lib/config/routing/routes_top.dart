@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mini_mart/config/routing/routes.dart';
 import 'package:mini_mart/config/routing/routes_branches.dart';
-import 'package:mini_mart/modules/cart/cart_screen.dart';
+import 'package:mini_mart/modules/cart/ui/cart_screen.dart';
 import 'package:mini_mart/modules/favorites/favorites_screen.dart';
-import 'package:mini_mart/modules/home/home_screen.dart';
+import 'package:mini_mart/modules/home/ui/home_screen.dart';
 import 'package:mini_mart/modules/nav_screen/nav_screen.dart';
 import 'package:mini_mart/modules/profile/profile_screen.dart';
 import 'package:mini_mart/modules/splash/splash_screen.dart';
@@ -32,7 +32,6 @@ List<RouteBase> topRoutes = [
         navigatorKey: shellNavKey,
         routes: [
           GoRoute(
-            parentNavigatorKey: shellNavKey,
             path: Routes.home,
             builder: (context, state) => HomeScreen(),
             routes: homeRoutes,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mini_mart/config/theme/screen_sizing.dart';
-import 'package:mini_mart/modules/home/product.dart';
+import 'package:mini_mart/modules/home/model/product.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.product, required this.onTap});

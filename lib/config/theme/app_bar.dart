@@ -9,7 +9,7 @@ class AppBarWithNav extends StatelessWidget implements PreferredSizeWidget {
   final String title;
 
   @override
-  Size get preferredSize => Size.fromHeight(barHeight ?? 150.ah);
+  Size get preferredSize => Size.fromHeight(barHeight ?? 95.ah);
 
   @override
   Widget build(BuildContext context) {

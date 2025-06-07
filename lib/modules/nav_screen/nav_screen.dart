@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mini_mart/config/theme/app_colors.dart';
-import 'package:mini_mart/modules/nav_screen/nav_destination.dart';
+import 'package:mini_mart/modules/cart/notifier/cart_screen_notifier.dart';
 
 class NavScreen extends ConsumerStatefulWidget {
   const NavScreen({super.key, required this.navigationShell});
@@ -16,6 +17,8 @@ class NavScreen extends ConsumerStatefulWidget {
 class _NavScreenState extends ConsumerState<NavScreen> {
   @override
   Widget build(BuildContext context) {
+    final model = ref.watch(cartScreenProvider);
+    //
     return Scaffold(
       body: widget.navigationShell,
       bottomNavigationBar: NavigationBar(
@@ -23,13 +26,28 @@ class _NavScreenState extends ConsumerState<NavScreen> {
         backgroundColor: AppColors.white,
         selectedIndex: widget.navigationShell.currentIndex,
         onDestinationSelected: widget.navigationShell.goBranch,
-        destinations: navDestinations.map((destination) {
-          return NavigationDestination(
-            icon: destination.icon,
-            label: destination.label,
-            selectedIcon: destination.icon,
-          );
-        }).toList(),
+        destinations: [
+          NavigationDestination(
+            icon: SvgPicture.asset('assets/svg/icon-home.svg'),
+            label: 'Home',
+          ),
+          NavigationDestination(
+            icon: Badge.count(
+              backgroundColor: AppColors.badge,
+              count: model.items.length,
+              child: SvgPicture.asset('assets/svg/icon-cart.svg'),
+            ),
+            label: 'Cart',
+          ),
+          NavigationDestination(
+            icon: SvgPicture.asset('assets/svg/icon-fav.svg'),
+            label: 'Favorites',
+          ),
+          NavigationDestination(
+            icon: SvgPicture.asset('assets/svg/icon-user.svg'),
+            label: 'Profile',
+          ),
+        ],
       ),
     );
   }

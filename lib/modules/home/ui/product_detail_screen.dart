@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mini_mart/config/theme/app_bar.dart';
 import 'package:mini_mart/config/theme/app_colors.dart';
 import 'package:mini_mart/config/theme/screen_sizing.dart';
-import 'package:mini_mart/modules/home/provider/home_providers.dart';
+import 'package:mini_mart/modules/home/notifier/home_providers.dart';
 
 class ProductDetailScreen extends ConsumerStatefulWidget {
   const ProductDetailScreen({super.key});
@@ -14,26 +15,16 @@ class ProductDetailScreen extends ConsumerStatefulWidget {
 }
 
 class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
-  //late Product _product;
-
   @override
   void initState() {
     super.initState();
-    // Make a local copy to mutate isLiked and quantity if needed.
-    // _product = widget.product;
   }
 
   @override
   Widget build(BuildContext context) {
     final product = ref.watch(productProvider);
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Product Details'),
-        centerTitle: true,
-        elevation: 1,
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-      ),
+      appBar: AppBarWithNav(title: 'Go back'),
       body: Stack(
         children: [
           Padding(
@@ -75,7 +66,9 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                                       shape: BoxShape.circle,
                                       boxShadow: [
                                         BoxShadow(
-                                          color: Colors.black.withOpacity(0.1),
+                                          color: Colors.black.withValues(
+                                            alpha: 0.1,
+                                          ),
                                           blurRadius: 4,
                                           offset: const Offset(0, 2),
                                         ),
@@ -180,31 +173,38 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
             ),
           ),
 
-          // 2) The “Add to Cart” button pinned at the bottom:
           Align(
             alignment: Alignment.bottomCenter,
-            child: Container(
-              color: Colors.white,
-              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-              child: SizedBox(
-                width: double.infinity,
-                height: 48.ah,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.blue1,
-                    foregroundColor: AppColors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+            child: SafeArea(
+              child: Container(
+                color: Colors.white,
+                padding: const EdgeInsets.symmetric(
+                  vertical: 12,
+                  horizontal: 16,
+                ),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 42.ah,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.blue1,
+                      foregroundColor: AppColors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                     ),
-                  ),
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Added to cart')),
-                    );
-                  },
-                  child: const Text(
-                    'Add to cart',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Added to cart')),
+                      );
+                    },
+                    child: const Text(
+                      'Add to cart',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ),
                 ),
               ),
