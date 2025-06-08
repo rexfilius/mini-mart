@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mini_mart/config/routing/routes.dart';
-import 'package:mini_mart/config/theme/app_bar.dart';
+import 'package:mini_mart/config/theme/app_bar_with_nav.dart';
+import 'package:mini_mart/config/theme/app_bar_with_search.dart';
 import 'package:mini_mart/modules/home/model/product.dart';
 import 'package:mini_mart/modules/home/ui/product_card.dart';
 import 'package:mini_mart/modules/home/notifier/home_providers.dart';
@@ -18,7 +19,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWithNav(title: 'Go back'),
+      appBar: AppBarWithSearch(title: 'Technology'),
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [

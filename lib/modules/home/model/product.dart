@@ -1,10 +1,7 @@
-// ignore: unused_import
-import 'package:equatable/equatable.dart';
-
 class Product {
   final String imageUrl;
   final String name;
-  final String price;
+  final double price;
   final List<String> descriptionBullets;
   int quantity;
   bool isLiked;
@@ -21,7 +18,7 @@ class Product {
   Product.empty()
     : imageUrl = '',
       name = '',
-      price = '',
+      price = 0.00,
       descriptionBullets = [],
       quantity = 1,
       isLiked = false;
@@ -29,9 +26,9 @@ class Product {
 
 final List<Product> demoProducts = [
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'Apple iPhone 16\n128 GB | Teal',
-    price: '\$700.00',
+    price: 700.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -40,9 +37,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'M4 Macbook Air 13″\n256 GB | Sky blue',
-    price: '\$1000.00',
+    price: 1000.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -51,9 +48,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'Google Pixel 9A\n128 GB | Iris',
-    price: '\$499.00',
+    price: 499.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -62,9 +59,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'Apple Airpods 4\nActive Noise Cancellatio…',
-    price: '\$129.00',
+    price: 129.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -73,9 +70,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'Apple iPhone 16\n128 GB | Teal',
-    price: '\$700.00',
+    price: 700.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -84,9 +81,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'M4 Macbook Air 13″\n256 GB | Sky blue',
-    price: '\$1000.00',
+    price: 1000.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -95,9 +92,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'Google Pixel 9A\n128 GB | Iris',
-    price: '\$499.00',
+    price: 499.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -106,9 +103,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'Apple Airpods 4\nActive Noise Cancellatio…',
-    price: '\$129.00',
+    price: 129.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -117,9 +114,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'Apple iPhone 16\n128 GB | Teal',
-    price: '\$700.00',
+    price: 700.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -128,9 +125,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'M4 Macbook Air 13″\n256 GB | Sky blue',
-    price: '\$1000.00',
+    price: 1000.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -139,9 +136,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'Google Pixel 9A\n128 GB | Iris',
-    price: '\$499.00',
+    price: 499.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -150,9 +147,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'Apple Airpods 4\nActive Noise Cancellatio…',
-    price: '\$129.00',
+    price: 129.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -161,9 +158,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'Apple iPhone 16\n128 GB | Teal',
-    price: '\$700.00',
+    price: 700.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -172,9 +169,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'M4 Macbook Air 13″\n256 GB | Sky blue',
-    price: '\$1000.00',
+    price: 1000.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -183,9 +180,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'Google Pixel 9A\n128 GB | Iris',
-    price: '\$499.00',
+    price: 499.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",
@@ -194,9 +191,9 @@ final List<Product> demoProducts = [
     ],
   ),
   Product(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: 'Apple Airpods 4\nActive Noise Cancellatio…',
-    price: '\$129.00',
+    price: 129.00,
     descriptionBullets: [
       'This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers.',
       "There will be no visible cosmetic imperfections when held at an arm's length.",

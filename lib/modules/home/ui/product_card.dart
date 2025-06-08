@@ -43,7 +43,7 @@ class ProductCard extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.aw, vertical: 8.ah),
                 child: Text(
-                  product.price,
+                  "\$${product.price}",
                   style: TextStyle(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w700,

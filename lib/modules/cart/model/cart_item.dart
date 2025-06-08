@@ -39,42 +39,42 @@ class CartItem {
 
 final List<CartItem> demoCartItems = [
   CartItem(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: "Apple iPhone 16 128GB | Teal",
     price: 700.00,
   ),
   CartItem(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: "Apple iPhone 16 128GB | Teal",
     price: 700.00,
   ),
   CartItem(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: "Apple iPhone 16 128GB | Teal",
     price: 700.00,
   ),
   CartItem(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: "Apple iPhone 16 128GB | Teal",
     price: 700.00,
   ),
   CartItem(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: "Apple iPhone 16 128GB | Teal",
     price: 700.00,
   ),
   CartItem(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: "Apple iPhone 16 128GB | Teal",
     price: 700.00,
   ),
   CartItem(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: "Apple iPhone 16 128GB | Teal",
     price: 700.00,
   ),
   CartItem(
-    imageUrl: 'assets/jpg/iphone1.png',
+    imageUrl: 'assets/png/iphone1.png',
     name: "Apple iPhone 16 128GB | Teal",
     price: 700.00,
   ),

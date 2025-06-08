@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mini_mart/config/theme/app_bar.dart';
+import 'package:go_router/go_router.dart';
+import 'package:mini_mart/config/theme/app_bar_with_nav.dart';
 import 'package:mini_mart/config/theme/app_colors.dart';
 import 'package:mini_mart/config/theme/screen_sizing.dart';
+import 'package:mini_mart/modules/cart/notifier/cart_screen_notifier.dart';
 import 'package:mini_mart/modules/home/notifier/home_providers.dart';
 
 class ProductDetailScreen extends ConsumerStatefulWidget {
@@ -24,7 +26,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
   Widget build(BuildContext context) {
     final product = ref.watch(productProvider);
     return Scaffold(
-      appBar: AppBarWithNav(title: 'Go back'),
+      appBar: AppBarWithNav(title: 'Go back', onTapBack: () => context.pop()),
       body: Stack(
         children: [
           Padding(
@@ -108,7 +110,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
-                      product.price,
+                      "\$${product.price}",
                       style: TextStyle(
                         fontSize: 28.sp,
                         fontWeight: FontWeight.w700,
@@ -194,9 +196,10 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                       ),
                     ),
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Added to cart')),
-                      );
+                      ref
+                          .read(cartScreenProvider.notifier)
+                          .addProductToCart(product);
+                      _showAddToCartSnackbar();
                     },
                     child: const Text(
                       'Add to cart',
@@ -213,5 +216,56 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
         ],
       ),
     );
+  }
+
+  void _showAddToCartSnackbar() {
+    final messenger = ScaffoldMessenger.of(context);
+    messenger
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          margin: const EdgeInsets.all(8),
+          duration: const Duration(seconds: 3),
+          content: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.1),
+                  blurRadius: 6,
+                  offset: const Offset(0, 3),
+                ),
+              ],
+            ),
+            child: Row(
+              children: [
+                Container(width: 4, height: 40, color: Colors.green),
+                const SizedBox(width: 12),
+                const Icon(Icons.check_circle, color: Colors.green, size: 24),
+                const SizedBox(width: 12),
+                const Expanded(
+                  child: Text(
+                    'Item has been added to cart',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: messenger.hideCurrentSnackBar,
+                  child: const Icon(Icons.close, color: Colors.black),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
   }
 }

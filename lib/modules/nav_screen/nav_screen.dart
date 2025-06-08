@@ -32,11 +32,13 @@ class _NavScreenState extends ConsumerState<NavScreen> {
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Badge.count(
-              backgroundColor: AppColors.badge,
-              count: model.items.length,
-              child: SvgPicture.asset('assets/svg/icon-cart.svg'),
-            ),
+            icon: model.items.isEmpty
+                ? SvgPicture.asset('assets/svg/icon-cart.svg')
+                : Badge.count(
+                    backgroundColor: AppColors.badge,
+                    count: model.items.length,
+                    child: SvgPicture.asset('assets/svg/icon-cart.svg'),
+                  ),
             label: 'Cart',
           ),
           NavigationDestination(
