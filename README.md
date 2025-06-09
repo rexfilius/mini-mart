@@ -87,6 +87,20 @@ Ensure the following asset folders are populated and declared in `pubspec.yaml`:
 * `assets/svg/`
 * `assets/fonts/` (IBMPlexSans family)
 
+## Built With
+
+This project was built and tested using the following SDK versions:
+
+| SDK           | Version   |
+|---------------|-----------|
+| Flutter SDK   | 3.32.2    |
+| Dart SDK      | 3.8.1     |
+
+To check your local setup, run:
+
+```bash
+flutter doctor -v
+
 ## Future Improvements
 
 * **Persistent Storage**: Integrate Hive or SQLite for offline cart persistence.
@@ -95,11 +109,4 @@ Ensure the following asset folders are populated and declared in `pubspec.yaml`:
 * **Testing**: Add unit and widget tests for business logic and UI.
 * **CI/CD**: Automate build & deployment pipelines.
 
-## Contributing
-
-Pull requests are welcome! Please adhere to the existing code style and add tests for new features.
-
-## License
-
-This project is licensed under the MIT License.
 
