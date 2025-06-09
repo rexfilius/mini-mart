@@ -100,13 +100,12 @@ To check your local setup, run:
 
 ```bash
 flutter doctor -v
+```
 
 ## Future Improvements
 
-* **Persistent Storage**: Integrate Hive or SQLite for offline cart persistence.
+* **Persistent Storage**: Integrate SQL for offline cart persistence.
 * **Favorites & Profile**: Implement functionality behind Favorites and Profile screens.
 * **Backend Integration**: Connect to an API for dynamic product data.
 * **Testing**: Add unit and widget tests for business logic and UI.
 * **CI/CD**: Automate build & deployment pipelines.
-
-
